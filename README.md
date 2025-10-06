@@ -2,7 +2,7 @@
 
 Welcome to the **Full-Stack Business Intelligence (BI) Project** repository!
 
-This project demonstrates a complete BI solution — from building a scalable data warehouse and performing SQL-based exploratory & advanced analytics in SQL Server, to delivering interactive dashboards in Power BI for high-impact storytelling.
+This project demonstrates a complete BI solution, from building a scalable data warehouse and performing SQL-based exploratory & advanced analytics in SQL Server, to delivering interactive dashboards in Power BI for high-impact storytelling.
 
 The project is structured into **three interconnected phases**, reflecting a full-stack BI workflow:
 
@@ -10,7 +10,7 @@ The project is structured into **three interconnected phases**, reflecting a ful
 2. **Data Analytics** — SQL-based exploratory and advanced analytics to uncover customer, product, and sales insights
 3. **Business Intelligence (BI)** — Visualization and storytelling using Power BI, including KPI dashboards, drillthrough reports, and dynamic filtering
 
-This end-to-end approach mirrors real-world BI projects — from raw data to insights that drive decisions. Although the dataset is historical (2011–2014), it provides a rich opportunity to simulate enterprise-grade warehouse design, data modeling, and stakeholder-focused dashboard delivery — the skills demonstrated here are timeless.
+This end-to-end approach mirrors real-world BI projects, from raw data to insights that drive decisions. Although the dataset is historical (2011–2014), it provides a rich opportunity to simulate enterprise-grade warehouse design, data modeling, and stakeholder-focused dashboard delivery. The skills demonstrated here are timeless.
 
 ---
 
@@ -59,19 +59,19 @@ To address this challenge, a complete **scalable data warehousing and analytics 
 
 Although based on fictional data, this project reflects realistic business scenarios and demonstrates how data-driven solutions can address operational inefficiencies and strategic blind spots.
 
-By consolidating fragmented ERP and CRM data into a centralized warehouse, the solution created a **single source of truth** — significantly reducing manual reporting and enabling cross-departmental alignment. The dashboards empowered decision-makers to:
+By consolidating fragmented ERP and CRM data into a centralized warehouse, the solution created a **single source of truth**, significantly reducing manual reporting and enabling cross-departmental alignment. The dashboards empowered decision-makers to:
 
 - Monitor real-time KPIs like revenue, AOV, and product profitability
 - Identify gaps in customer retention and order quality
 - Simulate pricing scenarios to optimize profit margins
 
-This project also showcased how full-stack BI workflows — from data warehousing to visualization — can accelerate insight delivery, reduce manual effort, and improve the accuracy of decision-making across the business.
+This project also showcased how full-stack BI workflows (from data warehousing to visualization) can accelerate insight delivery, reduce manual effort, and improve the accuracy of decision-making across the business.
 
 ---
 
 ## Stakeholder Requirements and Source System Understanding
 
-Although this is a portfolio project based on fictional data and simulated context, it closely mirrors how real-world analytics projects are initiated—by capturing stakeholder requirements and understanding the technical landscape of the source systems involved.
+Although this is a portfolio project based on fictional data and simulated context, it closely mirrors how real-world analytics projects are initiated by capturing stakeholder requirements and understanding the technical landscape of the source systems involved.
 
 In real-world scenarios, designing a scalable data warehouse begins with two parallel tracks:
 
@@ -89,7 +89,7 @@ To simulate this process, the project used a list of best-practice discovery que
 - What are the integration capabilities? (API, file extracts, direct DB access, Kafka, etc.)
 - What authentication/access controls are required? (Tokens, VPN, SSH, whitelisting)
 - What are the peak load times or usage periods for these systems?
-- What is the data refresh frequency — daily, hourly, or real-time?
+- What is the data refresh frequency (daily, hourly, or real-time)?
 - Should we implement full loads or delta (incremental) loads?
 - How large are the typical data extracts? Are there any volume constraints?
 - Are there known data quality, consistency, or completeness issues?
