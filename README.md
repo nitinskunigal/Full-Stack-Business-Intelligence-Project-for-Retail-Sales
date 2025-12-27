@@ -348,7 +348,7 @@ Together with the backend automation, this project simulates an end-to-end produ
 
 - **[Video Walkthrough](https://www.youtube.com/watch?v=Kspob_lGIaA&t=429s)** of this Project
 
-- **[Presentation Deck](https://github.com/nitinskunigal/SQL-Data-Warehouse-and-Analytics-Project/blob/main/docs/data_warehouse_and_analytics_project_presentation.pdf)**
+- **[Presentation Deck](https://github.com/nitinskunigal/Full-Stack-Business-Intelligence-Project-for-Retail-Sales/blob/main/docs/project_presentation.pdf)**
 
 ---
 
