@@ -10,7 +10,7 @@ The project is structured into **three interconnected phases**, reflecting a ful
 2. **Data Analytics** — SQL-based exploratory and advanced analytics to uncover customer, product, and sales insights
 3. **Business Intelligence (BI)** — Visualization and storytelling using Power BI, including KPI dashboards, drillthrough reports, and dynamic filtering
 
-This end-to-end approach mirrors real-world BI projects, from raw data to insights that drive decisions. Although the dataset is historical (2011–2014), it provides a rich opportunity to simulate enterprise-grade warehouse design, data modeling, and stakeholder-focused dashboard delivery. The skills demonstrated here are timeless.
+This end-to-end approach mirrors real-world BI projects, from raw data to insights that drive decisions. 
 
 ---
 
@@ -18,8 +18,6 @@ This end-to-end approach mirrors real-world BI projects, from raw data to insigh
 
 - [Problem Statement](#problem-statement)
 - [Objective](#objective)
-- [Project Overview](#project-overview)
-- [Stakeholder Requirements and Source System Understanding](#stakeholder-requirements-and-source-system-understanding)
 - [Phase 1: Designing the scalable Data Warehouse in SQL Server](#phase-1-designing-the-scalable-data-warehouse-in-sql-server)
 - [Phase 2: EDA and Advanced Data Analytics in SQL Server](#phase-2-eda-and-advanced-data-analytics-in-sql-server)
 - [Phase 3: Power BI Dashboards and Business Insights](#phase-3-power-bi-dashboards-and-business-insights)
@@ -30,28 +28,13 @@ This end-to-end approach mirrors real-world BI projects, from raw data to insigh
 
 ## Problem Statement
 
-This project is set in a **hypothetical mid-sized retail company** that sells consumer goods across multiple channels (e.g., online and in-store). The company uses a **CRM system** to track sales transactions along with core details of products and customers, and an **ERP system** to manage extended/ additional details of customers and products.
-
-Due to siloed systems and lack of integrated reporting, the company struggles with generating unified insights on product performance, customer behavior, and sales trends.
-
-To address this, a **scalable data warehouse** was built using the Medallion Architecture (Bronze, Silver, Gold) in SQL Server, enabling clean, integrated, and business-ready data for analytics.
+This project is set in a **hypothetical mid-sized retail company** that sells consumer goods across multiple channels (e.g., online and in-store). The company uses a **CRM system** to track sales transactions along with core details of products and customers, and an **ERP system** to manage extended/ additional details of customers and products. Due to siloed systems and lack of integrated reporting, the company struggles with generating unified insights on product performance, customer behavior, and sales trends. 
 
 ---
 
 ## Objective
 
 To address this challenge, a complete **scalable data warehousing and analytics pipeline** is designed and implemented using the Medallion Architecture (Bronze, Silver, Gold) in SQL Server, enabling clean, integrated, and business-ready data for analytics. The ultimate goal is to create a reusable, scalable data foundation that supports business intelligence, reporting, and data science use cases.
-
----
-
-## Project Overview
-
-| Aspect | Description |
-|--------|-------------|
-| **Tech Stack** | SQL Server, T-SQL, Stored Procedures, Views |
-| **Architecture** | Medallion Architecture (Bronze, Silver, Gold Layers) |
-| **Data Sources** | ERP and CRM data in CSV format |
-| **Objective** | Build a business-ready data warehouse in SQL Server, extract meaningful insights using SQL, and visualize those insights in Power BI |
 
 ---
 
@@ -69,69 +52,14 @@ This project also showcased how full-stack BI workflows (from data warehousing t
 
 ---
 
-## Stakeholder Requirements and Source System Understanding
-
-Although this is a portfolio project based on fictional data and simulated context, it closely mirrors how real-world analytics projects are initiated by capturing stakeholder requirements and understanding the technical landscape of the source systems involved.
-
-In real-world scenarios, designing a scalable data warehouse begins with two parallel tracks:
-
-- **Stakeholder Collaboration**: Framing business questions and converting stakeholder needs into user stories (here simulated in JIRA) to define KPIs, reporting expectations, and pain points in existing workflows.
-
-- **Source System Analysis**: Understanding the structure, limitations, and integration options of the systems holding the raw data (e.g., ERP, CRM).
-
-To simulate this process, the project used a list of best-practice discovery questions that would typically be explored in stakeholder workshops and technical walkthroughs. These questions shape everything from ingestion and transformation logic to the architecture of reporting layers.
-
-### Key questions used to drive requirement gathering:
-
-- Who owns the data in each source system (ERP, CRM, etc.)?
-- What business processes do these systems support (e.g., Sales, Customer Retention)?
-- What data formats and storage mechanisms are in place (CSV, SQL Server, Oracle, cloud storage)?
-- What are the integration capabilities? (API, file extracts, direct DB access, Kafka, etc.)
-- What authentication/access controls are required? (Tokens, VPN, SSH, whitelisting)
-- What are the peak load times or usage periods for these systems?
-- What is the data refresh frequency (daily, hourly, or real-time)?
-- Should we implement full loads or delta (incremental) loads?
-- How large are the typical data extracts? Are there any volume constraints?
-- Are there known data quality, consistency, or completeness issues?
-- Which fields are business-critical for KPIs and reporting?
-- How will we validate data correctness post-ingestion?
-- What level of historization (Type 1 vs. Type 2) is required?
-- What are the reporting pain points that this data warehouse is expected to solve?
-
-*Together, these stakeholder-driven stories and system-level insights informed the design of the Medallion Architecture (Bronze → Silver → Gold), ensuring technical feasibility and business relevance were aligned from the very beginning.*
-
-### Sample User Stories & Acceptance Criteria
-
-Here are a few example user stories created as part of the stakeholder requirement mapping process (simulated in JIRA):
-
-| **User Story** | **Persona** | **Acceptance Criteria** |
-|----------------|-------------|--------------------------|
-| **As a COO**, I want to monitor YoY revenue and profit trends so that I can evaluate overall business performance and spot strategic inflection points. | Executive Leadership | The dashboard must:<br>• Display YoY Revenue, Profit, Orders, and AOV with % change<br>• Include monthly revenue trends and a dynamic Top N product matrix<br>• Allow filtering by product category and subcategory<br>• Include a slicer panel containing slicers for year, country, and product segment  |
-| **As a Customer Success Analyst**, I want to identify top customers by revenue and analyze their spend behavior so that I can tailor retention campaigns. | Marketing / CS Team | The dashboard must:<br>• Show Top 100 customers with revenue, orders, and AOV<br>• Display KPIs: Revenue per Customer, Average Order per Customer, and Avg Monthly Spend<br>• Include a line chart switching between total customers and revenue per customer<br>• Include donut charts for segment-wise order and revenue distribution |
-| **As a Product Manager**, I want to analyze individual product performance and simulate price changes so that I can make more informed pricing decisions. | Merchandising / Product Team | The dashboard must:<br>• Enable drillthrough to selected products<br>• Display metrics like Avg Order Revenue, Monthly Revenue, and Price Sensitivity<br>• Allow simulation of profit impact through What-If scenarios |
-
----
-
-## Phase 1: Designing a Scalable Data Warehouse (Full-Stack BI Foundation)
+## Phase 1: Designing the Scalable Data Warehouse in SQL Server
 
 ### Objective
 Design and implement a scalable data warehouse using **SQL Server** to consolidate and model sales, customer, and product data from multiple source systems, enabling reliable analytical reporting.
 
 ### ETL Strategy Used in This Project
 
-The project implements a simplified yet realistic ETL (Extract → Transform → Load) pipeline using **batch-based full extraction and full load** (`truncate & insert`), with transformation steps handled in SQL Server through multiple layers (Bronze → Silver → Gold).
-
-✅ A detailed breakdown of **ETL types, methods, and which ones were used in this project** is available here → [`docs/etl_methods.md`](https://github.com/nitinskunigal/SQL-Data-Warehouse-and-Analytics-Project/blob/main/docs/etl_methods.md)
-
-![ETL Mind Map](https://github.com/nitinskunigal/SQL-Data-Warehouse-and-Analytics-Project/blob/main/docs/etl_mind_map.png)
-
-### Architecture: Medallion Approach
-
-| Layer | Purpose | Transformations | Load Type | Object Type |
-|-------|---------|-----------------|-----------|-------------|
-| **Bronze** | Raw data storage | None (as-is) | Full load (Truncate & Insert) | Tables |
-| **Silver** | Clean & standardized data | Cleansing, Normalization, Enrichment | Full load | Tables |
-| **Gold** | Business-ready layer | Integrations, Aggregations, Business Logic | No Load (Views only) | Views |
+The project implements a simplified yet realistic ETL (Extract → Transform → Load) pipeline using **batch-based full extraction and full load** (`truncate & insert`), with transformation steps handled in SQL Server through multiple layers (Bronze → Silver → Gold). A detailed breakdown of **ETL types, methods, and which ones were used in this project** is available here → [`docs/etl_methods.md`](https://github.com/nitinskunigal/SQL-Data-Warehouse-and-Analytics-Project/blob/main/docs/etl_methods.md)
 
 ### Data Warehouse Architecture
 
@@ -199,9 +127,7 @@ This section demonstrates how business-ready data from the Gold layer of the SQL
 
 ### Power BI Auto-Refresh Simulation
 
-The automation pipeline was extended to the reporting layer by connecting the published Power BI dashboards to the **On-Premises Gateway** and enabling scheduled refresh. This ensured that any updates made at the source level were automatically reflected in the visuals — allowing stakeholders to always work with the most current data without triggering manual refreshes. 
-
-Together with the backend automation, this project simulates an end-to-end production workflow — from source ingestion to real-time dashboard refresh — using industry-aligned best practices.
+The automation pipeline was extended to the reporting layer by connecting the published Power BI dashboards to the **On-Premises Gateway** and enabling scheduled refresh. This ensured that any updates made at the source level were automatically reflected in the visuals — allowing stakeholders to always work with the most current data without triggering manual refreshes. Together with the backend automation, this project simulates an end-to-end production workflow — from source ingestion to real-time dashboard refresh — using industry-aligned best practices.
 
 <details>
 <summary> <strong>Executive Dashboard</strong></summary>
