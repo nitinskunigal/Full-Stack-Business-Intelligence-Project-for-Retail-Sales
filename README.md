@@ -206,12 +206,11 @@ Although this project was executed in a simulated environment, the solution refl
 
 This project was designed to balance realism, technical feasibility, and business value within practical constraints. The following limitations and trade-offs reflect conscious design decisions rather than oversights.
 
-•	**ETL Orchestration**: SQL Server Express does not support SQL Server Agent, so Windows Task Scheduler was used to simulate automated ETL execution. This approach reflects a realistic workaround often used in proof-of-concept or local BI environments.
-•	**Tooling Choices**: SSIS was not used since the data sources were flat files and SQL-based transformations provided sufficient transparency and control.
-•	**Platform Constraints**: Microsoft Fabric was not implemented due to environment access limitations; however, the architectural principles applied are directly transferable to cloud-based BI platforms.
-•	**Security & Governance Scope**: Row-Level Security (RLS) and advanced access control were not implemented, as the project focused on analytics design rather than enterprise governance. While not in scope, the project acknowledges where RLS would be required in multi-team or role-based reporting environments.
-•	**Historical Dataset Constraints**
-The dataset spans historical periods and does not include real-time or streaming data. This limits operational use cases but remains sufficient for strategic, trend-based, and performance analysis scenarios.
+- **ETL Orchestration**: SQL Server Express does not support SQL Server Agent, so Windows Task Scheduler was used to simulate automated ETL execution. This approach reflects a realistic workaround often used in proof-of-concept or local BI environments.
+- **Tooling Choices**: SSIS was not used since the data sources were flat files and SQL-based transformations provided sufficient transparency and control.
+- **Platform Constraints**: Microsoft Fabric was not implemented due to environment access limitations; however, the architectural principles applied are directly transferable to cloud-based BI platforms.
+- **Security & Governance Scope**: Row-Level Security (RLS) and advanced access control were not implemented, as the project focused on analytics design rather than enterprise governance. While not in scope, the project acknowledges where RLS would be required in multi-team or role-based reporting environments.
+- **Historical Dataset Constraints**: The dataset spans historical periods and does not include real-time or streaming data. This limits operational use cases but remains sufficient for strategic, trend-based, and performance analysis scenarios.
 
 These trade-offs do not weaken the solution’s design. Instead, they demonstrate that strong BI principles i.e., data modeling, governance, and business alignment, remain effective regardless of tooling constraints.
 
